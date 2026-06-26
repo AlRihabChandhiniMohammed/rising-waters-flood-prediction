@@ -1,0 +1,78 @@
+# ──────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+*.so
+*.pyd
+.env
+venv/
+env/
+.venv/
+ENV/
+*.manifest
+*.spec
+
+# ──────────────────────────────────────────────
+# Jupyter Notebooks
+# ──────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+poetry.lock
+*.jupyter
+
+# ──────────────────────────────────────────────
+# VS Code
+# ──────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# ──────────────────────────────────────────────
+# ML / Data Science
+# ──────────────────────────────────────────────
+*.h5
+*.pb
+*.pkl
+*.joblib
+*.pickle
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.tflite
+models/*.pkl
+models/*.h5
+models/*.joblib
+models/*.onnx
+
+# ──────────────────────────────────────────────
+# Flask / Web
+# ──────────────────────────────────────────────
+instance/
+.webassets-cache
+*.db
+*.sqlite
+*.sqlite3
+
+# ──────────────────────────────────────────────
+# Logs & Temp
+# ──────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
