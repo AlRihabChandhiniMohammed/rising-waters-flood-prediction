@@ -187,3 +187,62 @@ Rising-Waters-Flood-Prediction/
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Project Status and Repository Structure
+
+### Project Status
+
+#### Completed Tasks
+- ✅ Entity Relationship Diagram
+- ✅ Pre-requisites
+- ✅ Project Workflow
+- ✅ Epic 1: Data Collection
+  - Downloaded the flood prediction dataset.
+- ✅ Epic 2: Visualizing and Analysing the Data
+  - Importing the required Python libraries.
+
+#### Repository Structure
+
+1. **Brainstorming & Ideation/**
+   - Brainstorming documents and idea prioritization.
+
+2. **Requirement Analysis/**
+   - Requirement analysis documents and project requirements.
+
+3. **Project Design Phase/**
+   - Dataset
+   - ER Diagram
+   - System architecture and design documents.
+
+4. **Project Planning Phase/**
+   - Jupyter notebooks for EDA and analysis.
+   - flood_prediction_analysis.ipynb
+
+5. **Project Development Phase/**
+   - Machine learning source code.
+   - Model training scripts.
+   - Saved models.
+
+6. **Project Testing/**
+   - Flask application.
+   - Testing files.
+
+7. **Project Documentation/**
+   - Project documentation.
+   - Reports.
+   - Guides.
+   - Tools and libraries documentation.
+
+8. **Project Demonstration/**
+   - Presentation.
+   - Demo video.
+   - Screenshots.
+
+#### Next Tasks
+- Read the dataset.
+- Perform Univariate Analysis.
+- Perform Multivariate Analysis.
+- Perform Descriptive Analysis.
+- Continue with Data Pre-processing.
