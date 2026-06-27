@@ -51,10 +51,10 @@ poetry.lock
 *.pt
 *.onnx
 *.tflite
-05_Model_Building/models/*.pkl
-05_Model_Building/models/*.h5
-05_Model_Building/models/*.joblib
-05_Model_Building/models/*.onnx
+Project Development Phase/models/*.pkl
+Project Development Phase/models/*.h5
+Project Development Phase/models/*.joblib
+Project Development Phase/models/*.onnx
 
 # ──────────────────────────────────────────────
 # Flask / Web

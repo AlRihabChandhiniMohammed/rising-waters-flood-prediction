@@ -56,14 +56,14 @@ Rising-Waters-Flood-Prediction/
 ├── .gitignore
 ├── requirements.txt
 │
-├── 01_Project_Initialization_and_Planning/   # Brainstorming, problem definition, planning
-├── 02_Project_Design/                        # Empathy map, ERD, data flow, architecture
-├── 03_Data_Collection/                       # Raw and processed datasets
-├── 04_Data_Analysis/                         # Jupyter notebooks for EDA
-├── 05_Model_Building/                        # Source code and trained models
-├── 06_Application/                           # Flask web application
-├── 07_Testing/                               # Test cases, results, screenshots
-├── 08_Documentation/                         # Reports, manuals, guides
+├── Brainstorming & Ideation/                 # Brainstorming and idea prioritization
+├── Requirement Analysis/                     # Solution requirements and tech stack
+├── Project Design Phase/                     # Data collection, ERD, architecture
+├── Project Planning Phase/                   # Jupyter notebooks for EDA
+├── Project Development Phase/                # Source code and trained models
+├── Project Testing/                          # Flask web application and tests
+├── Project Documentation/                    # Reports, manuals, guides
+├── Project Demonstration/                    # Demo video and presentation
 └── assets/                                   # Logos and icons
 ```
 
@@ -96,7 +96,7 @@ Rising-Waters-Flood-Prediction/
 4. **Run the Flask application**
 
    ```bash
-   python 06_Application/app.py
+   python "Project Testing/app.py"
    ```
 
    Visit `http://127.0.0.1:5000` in your browser.
@@ -105,9 +105,9 @@ Rising-Waters-Flood-Prediction/
 
 ## Usage
 
-1. Place raw datasets in `03_Data_Collection/dataset/raw/`.
-2. Run the notebooks in `04_Data_Analysis/notebooks/` in order.
-3. Train models using scripts in `05_Model_Building/src/`.
+1. Place raw datasets in `Project Design Phase/dataset/raw/`.
+2. Run the notebooks in `Project Planning Phase/notebooks/` in order.
+3. Train models using scripts in `Project Development Phase/src/`.
 4. Launch the Flask app and submit input features via the web interface.
 5. View predictions and probability scores on the results page.
 
