@@ -20,6 +20,42 @@ Flooding causes significant damage to life, property, and infrastructure worldwi
 
 ---
 
+## Project Workflow
+
+The project follows a structured machine learning development lifecycle consisting of five major phases:
+
+### Epic 1: Data Collection
+- Download the flood prediction dataset.
+- Load the dataset into a Jupyter Notebook for analysis.
+
+### Epic 2: Visualizing and Analysing the Data
+- Import the required Python libraries.
+- Explore the dataset.
+- Perform univariate analysis.
+- Perform multivariate analysis.
+- Generate descriptive statistics and visualizations.
+
+### Epic 3: Data Pre-processing
+- Handle missing values.
+- Detect and treat outliers.
+- Encode categorical variables.
+- Split the dataset into training and testing sets.
+- Apply feature scaling.
+
+### Epic 4: Model Building
+- Train Decision Tree, Random Forest, KNN, and XGBoost models.
+- Compare model performance using evaluation metrics.
+- Select the best-performing model.
+- Save the trained model as a .pkl file.
+
+### Epic 5: Application Building
+- Develop the HTML user interface.
+- Build the Flask application.
+- Integrate the trained model.
+- Test and validate the application.
+
+---
+
 ## Features
 
 - Data preprocessing and feature engineering pipeline.
