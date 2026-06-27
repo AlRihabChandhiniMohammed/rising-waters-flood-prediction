@@ -57,8 +57,8 @@ Rising-Waters-Flood-Prediction/
 ├── requirements.txt
 │
 ├── 1. Brainstorming & Ideation/              # Brainstorming and idea prioritization
-├── 2. Requirement Analysis/                  # Solution requirements and tech stack
-├── 3. Project Design Phase/                  # Data collection, ERD, architecture
+├── 2. Requirement Analysis/                  # Solution requirements, tech stack, ER diagram
+├── 3. Project Design Phase/                  # Data collection, dataset, architecture diagram
 ├── 4. Project Planning Phase/                # Jupyter notebooks for EDA
 ├── 5. Project Development Phase/             # Source code and trained models
 ├── 6. Project Testing/                       # Flask web application and tests
