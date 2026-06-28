@@ -155,8 +155,8 @@ Rising-Waters-Flood-Prediction/
 |----------------|----------|-----------|--------|----------|
 | Decision Tree  | 0.9565   | 1.0000    | 0.6667 | 0.8000   |
 | Random Forest  | 0.9565   | 1.0000    | 0.6667 | 0.8000   |
-| KNN            | —        | —         | —      | —        |
-| XGBoost        | —        | —         | —      | —        |
+| KNN            | 0.9130   | 0.6667    | 0.6667 | 0.6667   |
+| XGBoost        | 0.8696   | 0.0000    | 0.0000 | 0.0000   |
 
 ---
 
@@ -208,6 +208,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - ✅ Epic 4: Model Building
   - Implemented and tuned Decision Tree Classifier.
   - Implemented and tuned Random Forest Classifier.
+  - Implemented and tuned KNN Classifier.
+  - Implemented and tuned XGBoost Classifier.
+  - Compared the models and selected the best model.
+  - Saved the best model in .pkl file.
+  
 
 #### Repository Structure
 
