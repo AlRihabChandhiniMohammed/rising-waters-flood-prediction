@@ -1,24 +1,26 @@
-"""
-Utility Module — Rising-Waters-Flood-Prediction
-
-Common helper functions used across the model building pipeline.
-"""
+import os
+import random
+import numpy as np
 
 def set_seed(seed=42):
-    """Set random seed for reproducibility."""
-    pass
+    random.seed(seed)
+    np.random.seed(seed)
 
 
 def ensure_directory(path):
-    """Create directory if it does not exist."""
-    pass
+    os.makedirs(path, exist_ok=True)
 
 
 def save_plot(fig, filepath):
-    """Save a matplotlib figure to disk."""
-    pass
+    ensure_directory(os.path.dirname(filepath))
+    fig.savefig(filepath, bbox_inches='tight')
 
 
 def load_config(path="config.yaml"):
-    """Load configuration from a YAML file."""
-    pass
+    if os.path.exists(path):
+        import yaml
+        with open(path, 'r') as f:
+            return yaml.safe_load(f)
+    return {}
+
+

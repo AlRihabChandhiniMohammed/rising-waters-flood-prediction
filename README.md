@@ -151,12 +151,10 @@ Rising-Waters-Flood-Prediction/
 
 ## Results
 
-<!-- TODO: Add model performance comparison table and screenshots -->
-
 | Model          | Accuracy | Precision | Recall | F1-Score |
 |----------------|----------|-----------|--------|----------|
-| Decision Tree  | —        | —         | —      | —        |
-| Random Forest  | —        | —         | —      | —        |
+| Decision Tree  | 0.9565   | 1.0000    | 0.6667 | 0.8000   |
+| Random Forest  | 0.9565   | 1.0000    | 0.6667 | 0.8000   |
 | KNN            | —        | —         | —      | —        |
 | XGBoost        | —        | —         | —      | —        |
 
@@ -202,6 +200,14 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
   - Downloaded the flood prediction dataset.
 - ✅ Epic 2: Visualizing and Analysing the Data
   - Importing the required Python libraries.
+- ✅ Epic 3: Data Pre-processing
+  - Handled outliers using IQR winsorization capping.
+  - Implemented encoding check for categorical values.
+  - Split dataset into training and test sets using stratified splitting.
+  - Applied feature scaling using StandardScaler.
+- ✅ Epic 4: Model Building
+  - Implemented and tuned Decision Tree Classifier.
+  - Implemented and tuned Random Forest Classifier.
 
 #### Repository Structure
 
@@ -273,6 +279,18 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
     * Verified the absence of missing values using `isnull().any()`.
     * Confirmed that the dataset contains no missing values and requires no imputation.
 
+* ✅ **Epic 3: Data Pre-processing**
+
+  * Detected and treated outliers using IQR winsorization capping.
+  * Checked and encoded categorical columns using one-hot encoding.
+  * Split data into stratified training and testing sets.
+  * Scaled features using StandardScaler.
+
+* ✅ **Epic 4: Model Building**
+
+  * Built, trained, and tuned Decision Tree Classifier.
+  * Built, trained, and tuned Random Forest Classifier.
+
 ---
 
 ## Repository Structure (Updated)
@@ -310,14 +328,14 @@ The following notebooks have been completed:
   * Missing value verification.
   * Observations.
 
+* `06_Preprocessing_and_Modeling.ipynb`
+
+  * Pipeline verification including outlier treatment, stratified split, feature scaling, Decision Tree tuning, and Random Forest tuning.
+
 ---
 
 ## Next Tasks
 
-* Continue with **Data Pre-processing**.
-* Detect and treat outliers.
-* Encode categorical variables (if required).
-* Split the dataset into training and testing sets.
-* Apply feature scaling.
-* Proceed with machine learning model development.
-
+* Continue with KNN and XGBoost model development.
+* Implement model comparison script and save the best model.
+* Proceed with Flask application development.

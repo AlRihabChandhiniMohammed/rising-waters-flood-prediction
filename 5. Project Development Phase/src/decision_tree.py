@@ -1,14 +1,27 @@
-"""
-Decision Tree Module — Rising-Waters-Flood-Prediction
-
-Trains and evaluates a Decision Tree classifier for flood prediction.
-"""
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import GridSearchCV
 
 def train_decision_tree(X_train, y_train, params=None):
-    """Train a Decision Tree classifier with optional hyperparameters."""
-    pass
+    if params is None:
+        params = {}
+    
+    if 'random_state' not in params:
+        params['random_state'] = 42
+        
+    clf = DecisionTreeClassifier(**params)
+    clf.fit(X_train, y_train)
+    return clf
 
 
 def tune_hyperparameters(X_train, y_train, param_grid):
-    """Perform grid search to optimize Decision Tree parameters."""
-    pass
+    clf = DecisionTreeClassifier(random_state=42)
+    grid_search = GridSearchCV(
+        estimator=clf, 
+        param_grid=param_grid, 
+        cv=5, 
+        scoring='f1'
+    )
+    grid_search.fit(X_train, y_train)
+    return grid_search.best_estimator_, grid_search.best_params_
+
+
