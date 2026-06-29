@@ -333,10 +333,6 @@ The following notebooks have been completed:
   * Missing value verification.
   * Observations.
 
-* `06_Preprocessing_and_Modeling.ipynb`
-
-  * Pipeline verification including outlier treatment, stratified split, feature scaling, Decision Tree tuning, and Random Forest tuning.
-
 ---
 
 ## Next Tasks
