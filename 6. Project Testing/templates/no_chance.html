@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Flood Risk Detected — Rising Waters</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/wave.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="backdrop"></div>
+<div class="tide-line" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path class="p2" d="M0,60 C240,100 480,20 720,55 C960,90 1200,30 1440,65 L1440,120 L0,120 Z"></path>
+    <path d="M0,80 C240,40 480,110 720,75 C960,40 1200,100 1440,70 L1440,120 L0,120 Z"></path>
+  </svg>
+</div>
+
+<nav class="nav">
+  <a href="/" class="nav-brand" style="cursor:pointer;">
+    <span class="dot"></span>
+    Rising&nbsp;Waters
+  </a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/predict" class="nav-cta">Predict Flood</a>
+  </div>
+</nav>
+
+<main class="result-shell">
+  <div class="result-card glass safe reveal in-view">
+
+    <div class="result-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </div>
+
+    <h1>No Flood Risk Detected</h1>
+    <p class="result-msg">
+      The model finds the current weather and rainfall readings consistent with
+      safe conditions. Risk levels remain low for this area based on the data submitted.
+    </p>
+
+    {% if confidence is defined and confidence %}
+    <div class="confidence">
+      <div class="confidence-top">
+        <span class="label">Prediction Confidence</span>
+        <span class="confidence-badge">{{ confidence }}%</span>
+      </div>
+      <div class="confidence-track">
+        <div class="confidence-fill" data-confidence="{{ confidence }}"></div>
+      </div>
+    </div>
+    {% endif %}
+
+    <ul class="tip-list">
+      <li class="tip-item">
+        <span class="tip-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+        </span>
+        <span>Conditions look stable — continue normal activities with general awareness.</span>
+      </li>
+      <li class="tip-item">
+        <span class="tip-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M3 11h18M8 7V4h8v3"></path></svg>
+        </span>
+        <span>Keep an emergency kit ready as routine practice during rainy seasons.</span>
+      </li>
+      <li class="tip-item">
+        <span class="tip-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6.5 16"></path></svg>
+        </span>
+        <span>Re-check the prediction if rainfall or weather conditions change significantly.</span>
+      </li>
+    </ul>
+
+    <div class="result-actions">
+      <a href="/predict" class="btn btn-safe">Predict Again</a>
+      <a href="/" class="btn btn-ghost">Home</a>
+    </div>
+
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

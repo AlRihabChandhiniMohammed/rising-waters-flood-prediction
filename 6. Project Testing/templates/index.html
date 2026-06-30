@@ -1,31 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rising-Waters — Flood Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predict Flood Risk — Rising Waters</title>
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/wave.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Rising-Waters</h1>
-        <p>Flood Prediction System</p>
-    </header>
+<div class="backdrop"></div>
+<div class="tide-line" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path class="p2" d="M0,60 C240,100 480,20 720,55 C960,90 1200,30 1440,65 L1440,120 L0,120 Z"></path>
+    <path d="M0,80 C240,40 480,110 720,75 C960,40 1200,100 1440,70 L1440,120 L0,120 Z"></path>
+  </svg>
+</div>
 
-    <main>
-        <section id="prediction-section">
-            <!-- TODO: Add input form for flood prediction features -->
-        </section>
+<nav class="nav">
+  <a href="/" class="nav-brand" style="cursor:pointer;">
+    <span class="dot"></span>
+    Rising&nbsp;Waters
+  </a>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/predict" class="nav-cta">Predict Flood</a>
+  </div>
+</nav>
 
-        <section id="results-section">
-            <!-- TODO: Display prediction results and probability scores -->
-        </section>
-    </main>
+<main class="dash-shell">
+  <div class="dash-head reveal in-view">
+    <span class="section-eyebrow">Risk Model · Live Input</span>
+    <h1>Flood Risk Dashboard</h1>
+    <p>Enter the current weather and rainfall readings below. The model evaluates all ten parameters together to estimate flood risk.</p>
+  </div>
 
-    <footer>
-        <p>&copy; 2026 Rising-Waters Team</p>
-    </footer>
+  <form id="predict-form" class="dash-card glass reveal in-view" action="/predict_flood" method="POST" novalidate>
+    <div class="field-grid">
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <div class="field">
+        <label for="temp">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+          </span>
+          Temperature
+          <span class="field-unit">°C</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="temp" name="temp" placeholder="e.g. 28.5" min="0" max="60" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="humidity">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S6 10 6 14.5a6 6 0 0 0 12 0C18 10 12 2.5 12 2.5z"></path></svg>
+          </span>
+          Humidity
+          <span class="field-unit">%</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="humidity" name="humidity" placeholder="e.g. 78" min="0" max="100" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="cloud">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6.5 16"></path></svg>
+          </span>
+          Cloud Cover
+          <span class="field-unit">%</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="cloud" name="cloud" placeholder="e.g. 64" min="0" max="100" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="annual">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 13v8M8 13v8M12 15v6M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+          </span>
+          Annual Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="annual" name="annual" placeholder="e.g. 1120" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="janfeb">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
+          </span>
+          Jan – Feb Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="janfeb" name="janfeb" placeholder="e.g. 12" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="marmay">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
+          </span>
+          Mar – May Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="marmay" name="marmay" placeholder="e.g. 88" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="junsep">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
+          </span>
+          Jun – Sep Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="junsep" name="junsep" placeholder="e.g. 760" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="octdec">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg>
+          </span>
+          Oct – Dec Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="octdec" name="octdec" placeholder="e.g. 160" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="avgjune">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 13v8M8 13v8M12 15v6M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+          </span>
+          Average June Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="avgjune" name="avgjune" placeholder="e.g. 210" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="sub">
+          <span class="field-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 14h7l-1 8 11-14h-7l1-6z"></path></svg>
+          </span>
+          Sub Divisional Rainfall
+          <span class="field-unit">mm</span>
+        </label>
+        <div class="field-input-wrap">
+          <input type="number" step="any" id="sub" name="sub" placeholder="e.g. 940" required>
+        </div>
+        <span class="field-error" role="alert"></span>
+      </div>
+
+    </div>
+
+    <div class="dash-submit">
+      <button type="submit" class="btn btn-primary">
+        <span class="btn-label">Run Prediction</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+      <span class="hint">Your readings are sent securely to the prediction model.</span>
+    </div>
+  </form>
+</main>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
