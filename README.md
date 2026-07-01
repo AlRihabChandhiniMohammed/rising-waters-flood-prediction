@@ -343,81 +343,48 @@ The following notebooks have been completed:
 
 
 
+# 💧 Rising Waters — Flood Prediction System
+
+> An AI-powered flood risk prediction system built with Machine Learning and a modern web interface.
+
+---
+
 ## 📌 Project Overview
 
-Rising Waters combines Machine Learning with a responsive web application to estimate flood risk using:
+Rising Waters combines Machine Learning with a responsive web application to estimate flood risk using real-world environmental data. The trained ML model evaluates ten parameters and predicts whether flood conditions are likely, displaying the result through a clean, modern interface.
 
-- Temperature
-- Humidity
-- Cloud Cover
-- Annual Rainfall
-- Seasonal Rainfall
-- Other environmental parameters
+**Input Parameters used for prediction:**
 
-The trained ML model predicts whether flood conditions are likely and displays the result through a modern user-friendly interface.
+| Parameter | Parameter |
+|---|---|
+| Temperature | Annual Rainfall |
+| Humidity | Jan – Feb Rainfall |
+| Cloud Cover | Mar – May Rainfall |
+| Jun – Sep Rainfall | Oct – Dec Rainfall |
+| Average June Rainfall | Sub Divisional Rainfall |
 
 ---
 
 ## 🚀 Technologies Used
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript
-
-### Backend
-- Python
-- Flask
-
-### Machine Learning
-- Scikit-learn
-- Pandas
-- NumPy
-- Pickle
+| Layer | Technologies |
+|---|---|
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Backend** | Python, Flask |
+| **Machine Learning** | Scikit-learn, Pandas, NumPy, Pickle |
 
 ---
 
-# 💻 Frontend Development (Application Building)
+## 📂 Project Structure
 
-*Developed by Vijay Kiran Kommoju*
-
-### My Contributions
-
-✅ Designed the complete user interface from scratch.
-✅ Built a fully responsive website for desktop, tablet, and mobile devices.
-✅ Created a modern landing page with:
-  - Hero Section
-  - Feature Cards
-  - Process Flow Section
-  - Responsive Navigation Bar
-  - Professional Footer
-✅ Developed the prediction dashboard UI.
-✅ Designed Flood Detected and No Flood result pages.
-✅ Implemented:
-  - Glassmorphism design
-  - Modern gradients
-  - Responsive layouts
-  - Smooth animations
-  - Scroll reveal effects
-  - Button ripple effects
-  - Loading animations
-✅ Added client-side form validation using JavaScript.
-✅ Designed reusable CSS components using CSS variables.
-✅ Improved accessibility using semantic HTML and focus states.
-✅ Optimized the frontend for better user experience.
-✅ Integrated the frontend with the existing Flask backend for prediction requests.
----
-
-## 📂 Project Structure (Updated)
-
-
-6. Project Testing/
+```
+rising-waters-flood-prediction/
 │
 ├── static/
 │   ├── css/
-│   │     style.css
+│   │   └── style.css
 │   ├── js/
-│   │     script.js
+│   │   └── script.js
 │   └── images/
 │
 ├── templates/
@@ -429,69 +396,102 @@ The trained ML model predicts whether flood conditions are likely and displays t
 ├── model.pkl
 ├── app.py
 └── README.md
+```
 
-
-
-## 📸 Screenshots
-
-- Home Page
-
-![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/home.png)
-
-
-- Prediction Form
-
-![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/index.png)
-
-
-- Flood Result
-
-![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/chance.png)
-
-
-- Safe Result
-
-![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/no_chance.png)
 ---
 
 ## ▶️ Running the Project
 
-Clone the repository
+**1. Clone the repository**
 
-bash
-git clone git clone https://github.com/AlRihabChandhiniMohammed/rising-waters-flood-prediction.git
+```bash
+git clone https://github.com/AlRihabChandhiniMohammed/rising-waters-flood-prediction.git
+```
 
+**2. Move into the project folder**
 
-Move into the project
-
-bash
+```bash
 cd "rising-waters-flood-prediction"
+```
 
-Create Environment 
-      python -m venv env
+**3. Create a virtual environment**
 
-Activate on Windows: .\env\Scripts\Activate.ps1
-Activate on macOS/Linux: source venv/bin/activate
+```bash
+python -m venv env
+```
 
-Install dependencies
+**4. Activate the environment**
 
-bash
+```bash
+# Windows
+.\env\Scripts\Activate.ps1
+
+# macOS / Linux
+source venv/bin/activate
+```
+
+**5. Install dependencies**
+
+```bash
 pip install -r requirements.txt
+```
 
+**6. Run the Flask application**
 
-Run the Flask application
-
-bash
+```bash
 python "6. Project Testing/app.py"
+```
 
+**7. Open in your browser**
 
-Open your browser and visit
-
-
+```
 http://127.0.0.1:5000
-
+```
 
 ---
 
+## 💻 Frontend Development
 
+**Developed by Vijay Kiran Kommoju**
 
+### ✅ Contributions
+
+**UI Design & Layout**
+- Designed the complete user interface from scratch
+- Built a fully responsive layout for desktop, tablet, and mobile devices
+- Created a modern landing page with a Hero Section, Feature Cards, Process Flow, and Footer
+- Developed the prediction dashboard UI
+- Designed the Flood Detected and No Flood result pages
+
+**Design System**
+- Glassmorphism card components
+- Custom gradient-based color palette using CSS variables
+- Smooth animations and scroll reveal effects
+- Button ripple effects and loading state animations
+- Reusable CSS component architecture
+
+**Functionality & Accessibility**
+- Client-side form validation using Vanilla JavaScript
+- Semantic HTML5 for better accessibility
+- Keyboard focus states and proper ARIA roles
+- Integrated frontend with existing Flask backend
+
+---
+
+## 📸 Screenshots
+
+**Home Page**
+
+![Home Page](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/home.png)
+
+**Prediction Form**
+
+![Prediction Form](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/index.png)
+
+**Flood Detected Result**
+
+![Flood Result](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/chance.png)
+
+**No Flood Result**
+
+![Safe Result](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/no_chance.png)
