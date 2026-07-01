@@ -341,8 +341,6 @@ The following notebooks have been completed:
 * Implement model comparison script and save the best model.
 * Proceed with Flask application development.
 
-
-
 # 💧 Rising Waters — Flood Prediction System
 
 > An AI-powered flood risk prediction system built with Machine Learning and a modern web interface.
@@ -456,25 +454,38 @@ http://127.0.0.1:5000
 
 ### ✅ Contributions
 
+**Files Built**
+
+| File | Description |
+|---|---|
+| `templates/home.html` | Landing page — hero section, feature cards, process flow, footer |
+| `templates/index.html` | Prediction dashboard — 10-input form with icons, labels and grid layout |
+| `templates/chance.html` | Flood Detected result page — warning design with safety tips |
+| `templates/no_chance.html` | No Flood result page — safe design with recommendations |
+| `static/css/style.css` | Complete stylesheet — design tokens, glass cards, animations, responsive layout |
+| `static/js/script.js` | Form validation, loading state, scroll reveal, ripple effects, confidence bar |
+
 **UI Design & Layout**
 - Designed the complete user interface from scratch
 - Built a fully responsive layout for desktop, tablet, and mobile devices
 - Created a modern landing page with a Hero Section, Feature Cards, Process Flow, and Footer
-- Developed the prediction dashboard UI
-- Designed the Flood Detected and No Flood result pages
+- Developed the prediction dashboard with all 10 input fields, icons, labels, and units (`index.html`)
+- Designed the Flood Detected (`chance.html`) and No Flood (`no_chance.html`) result pages
 
-**Design System**
-- Glassmorphism card components
+**Design System** — `style.css`
+- Glassmorphism card components with backdrop blur
 - Custom gradient-based color palette using CSS variables
 - Smooth animations and scroll reveal effects
 - Button ripple effects and loading state animations
 - Reusable CSS component architecture
 
-**Functionality & Accessibility**
-- Client-side form validation using Vanilla JavaScript
-- Semantic HTML5 for better accessibility
-- Keyboard focus states and proper ARIA roles
-- Integrated frontend with existing Flask backend
+**Functionality & Accessibility** — `script.js`
+- Client-side form validation — empty field check, numbers only, no negatives
+- Loading spinner and "Predicting…" button state on form submit
+- Animated confidence progress bar on result pages
+- Scroll reveal using Intersection Observer
+- Semantic HTML5 for better accessibility and keyboard focus states
+- Integrated frontend with existing Flask backend — no backend code changed
 
 ---
 
@@ -482,16 +493,16 @@ http://127.0.0.1:5000
 
 **Home Page**
 
-![Home Page](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/home.png)
+![Home Page](7.%20Project%20Documentation/screenshots/home.png)
 
 **Prediction Form**
 
-![Prediction Form](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/index.png)
+![Prediction Form](7.%20Project%20Documentation/screenshots/index.png)
 
 **Flood Detected Result**
 
-![Flood Result](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/chance.png)
+![Flood Result](7.%20Project%20Documentation/screenshots/chance.png)
 
 **No Flood Result**
 
-![Safe Result](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/no_chance.png)
+![Safe Result](7.%20Project%20Documentation/screenshots/no_chance.png)
