@@ -340,3 +340,158 @@ The following notebooks have been completed:
 * Continue with KNN and XGBoost model development.
 * Implement model comparison script and save the best model.
 * Proceed with Flask application development.
+
+
+
+## 📌 Project Overview
+
+Rising Waters combines Machine Learning with a responsive web application to estimate flood risk using:
+
+- Temperature
+- Humidity
+- Cloud Cover
+- Annual Rainfall
+- Seasonal Rainfall
+- Other environmental parameters
+
+The trained ML model predicts whether flood conditions are likely and displays the result through a modern user-friendly interface.
+
+---
+
+## 🚀 Technologies Used
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+- Python
+- Flask
+
+### Machine Learning
+- Scikit-learn
+- Pandas
+- NumPy
+- Pickle
+
+---
+
+# 💻 Frontend Development (Application Building)
+
+*Developed by Vijay Kiran Kommoju*
+
+### My Contributions
+
+✅ Designed the complete user interface from scratch.
+✅ Built a fully responsive website for desktop, tablet, and mobile devices.
+✅ Created a modern landing page with:
+  - Hero Section
+  - Feature Cards
+  - Process Flow Section
+  - Responsive Navigation Bar
+  - Professional Footer
+✅ Developed the prediction dashboard UI.
+✅ Designed Flood Detected and No Flood result pages.
+✅ Implemented:
+  - Glassmorphism design
+  - Modern gradients
+  - Responsive layouts
+  - Smooth animations
+  - Scroll reveal effects
+  - Button ripple effects
+  - Loading animations
+✅ Added client-side form validation using JavaScript.
+✅ Designed reusable CSS components using CSS variables.
+✅ Improved accessibility using semantic HTML and focus states.
+✅ Optimized the frontend for better user experience.
+✅ Integrated the frontend with the existing Flask backend for prediction requests.
+---
+
+## 📂 Project Structure (Updated)
+
+
+6. Project Testing/
+│
+├── static/
+│   ├── css/
+│   │     style.css
+│   ├── js/
+│   │     script.js
+│   └── images/
+│
+├── templates/
+│   ├── home.html
+│   ├── index.html
+│   ├── chance.html
+│   └── no_chance.html
+│
+├── model.pkl
+├── app.py
+└── README.md
+
+
+
+## 📸 Screenshots
+
+- Home Page
+
+![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/home.png)
+
+
+- Prediction Form
+
+![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/index.png)
+
+
+- Flood Result
+
+![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/chance.png)
+
+
+- Safe Result
+
+![alt text](../rising-waters-flood-prediction/7.%20Project%20Documentation/screenshots/no_chance.png)
+---
+
+## ▶️ Running the Project
+
+Clone the repository
+
+bash
+git clone git clone https://github.com/AlRihabChandhiniMohammed/rising-waters-flood-prediction.git
+
+
+Move into the project
+
+bash
+cd "rising-waters-flood-prediction"
+
+Create Environment 
+      python -m venv env
+
+Activate on Windows: .\env\Scripts\Activate.ps1
+Activate on macOS/Linux: source venv/bin/activate
+
+Install dependencies
+
+bash
+pip install -r requirements.txt
+
+
+Run the Flask application
+
+bash
+python "6. Project Testing/app.py"
+
+
+Open your browser and visit
+
+
+http://127.0.0.1:5000
+
+
+---
+
+
+
