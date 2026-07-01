@@ -393,6 +393,20 @@ ul{ list-style:none; }
 }
 .footer-brand{ font-family: var(--font-display); font-weight:700; }
 .footer p{ color: var(--ink-3); font-size:.85rem; }
+.footer-team
+{
+    display: flex;
+    flex-direction: column;
+}
+.footer-team strong
+{
+  color: white;
+}
+#footer-team-head
+{
+    font-size: 20px;
+    color: #00d5ff; 
+}
 
 /* =========================================================
    PREDICTION DASHBOARD (index.html)
