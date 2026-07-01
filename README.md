@@ -373,31 +373,6 @@ Rising Waters combines Machine Learning with a responsive web application to est
 
 ---
 
-## 📂 Project Structure
-
-```
-rising-waters-flood-prediction/
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-│
-├── templates/
-│   ├── home.html
-│   ├── index.html
-│   ├── chance.html
-│   └── no_chance.html
-│
-├── model.pkl
-├── app.py
-└── README.md
-```
-
----
-
 ## ▶️ Running the Project
 
 **1. Clone the repository**
@@ -488,6 +463,33 @@ http://127.0.0.1:5000
 - Integrated frontend with existing Flask backend — no backend code changed
 
 ---
+
+
+## 📂 Project Structure (Updated)
+
+```
+rising-waters-flood-prediction/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── images/
+│
+├── templates/
+│   ├── home.html
+│   ├── index.html
+│   ├── chance.html
+│   └── no_chance.html
+│
+├── model.pkl
+├── app.py
+└── README.md
+```
+
+---
+
 
 ## 📸 Screenshots
 
