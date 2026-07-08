@@ -1,0 +1,2 @@
+[tool.vercel]
+entrypoint = "6. Project Testing.app:app"
