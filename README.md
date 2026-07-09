@@ -3,8 +3,14 @@
 An AI-powered Flood Prediction System that uses Machine Learning to predict the possibility of floods based on weather and rainfall parameters. The application provides quick predictions through a simple web interface, helping support early warning and disaster preparedness.
 
 ---
+## 🌐 Live Demo
 
+The Rising Waters application is deployed on Render and can be accessed using the link below:
+
+🔗 **Live Application:**  
 [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=render)](https://rising-waters-flood-prediction-y8sg.onrender.com)
+
+> **Note:** This application is hosted on Render's free tier. If the application has been inactive for some time, the first request may take 30–60 seconds while the server wakes up.
 
 ## 📌 Project Overview
 
