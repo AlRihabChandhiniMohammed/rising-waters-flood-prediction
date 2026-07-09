@@ -3,20 +3,26 @@
 An AI-powered Flood Prediction System that uses Machine Learning to predict the possibility of floods based on weather and rainfall parameters. The application provides quick predictions through a simple web interface, helping support early warning and disaster preparedness.
 
 ---
-## 🌐 Live Demo
-
-The Rising Waters application is deployed on Render and can be accessed using the link below:
-
-🔗 **Live Application:**  
-[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=render)](https://rising-waters-flood-prediction-y8sg.onrender.com)
-
-> **Note:** This application is hosted on Render's free tier. If the application has been inactive for some time, the first request may take 30–60 seconds while the server wakes up.
 
 ## 📌 Project Overview
 
 Floods are among the most destructive natural disasters, causing significant loss of life and property every year. Timely prediction of flood risk enables authorities and communities to take preventive measures before disasters occur.
 
 This project uses historical weather and rainfall data to train multiple machine learning models and predict whether flood conditions are likely to occur. The best-performing model is integrated into a Flask web application, allowing users to enter weather parameters and instantly receive a prediction.
+
+---
+
+## 🌐 Live Demo
+
+The Rising Waters application is deployed on Render and can be accessed using the link below:
+
+🔗 **Live Application:**  
+
+
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=render)](https://rising-waters-flood-prediction-y8sg.onrender.com)
+
+
+**Note:** This application is hosted on Render's free tier. If the application has been inactive for some time, the first request may take 30–60 seconds while the server wakes up.
 
 ---
 
@@ -47,6 +53,7 @@ This project uses historical weather and rainfall data to train multiple machine
 * Instant Flood / No Flood prediction
 
 ---
+
 
 ## 🛠 Technology Stack
 
