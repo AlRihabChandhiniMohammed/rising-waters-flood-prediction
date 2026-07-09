@@ -4,6 +4,8 @@ An AI-powered Flood Prediction System that uses Machine Learning to predict the 
 
 ---
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge&logo=render)](https://rising-waters-flood-prediction-y8sg.onrender.com)
+
 ## 📌 Project Overview
 
 Floods are among the most destructive natural disasters, causing significant loss of life and property every year. Timely prediction of flood risk enables authorities and communities to take preventive measures before disasters occur.
