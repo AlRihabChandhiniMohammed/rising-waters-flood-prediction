@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rising Waters — AI Flood Prediction System</title>
+<meta name="description" content="Rising Waters uses a trained machine learning model to predict flood risk from real-time weather and rainfall parameters.">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/wave.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="backdrop"></div>
+<div class="tide-line" aria-hidden="true">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path class="p2" d="M0,60 C240,100 480,20 720,55 C960,90 1200,30 1440,65 L1440,120 L0,120 Z"></path>
+    <path d="M0,80 C240,40 480,110 720,75 C960,40 1200,100 1440,70 L1440,120 L0,120 Z"></path>
+  </svg>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="dot"></span>
+    Rising&nbsp;Waters
+  </div>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <div class="nav-links">
+    <a href="#features">Capabilities</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="/predict" class="nav-cta">Predict Flood</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <span class="hero-eyebrow"><span class="dot"></span> Machine Learning · Live Risk Model</span>
+
+  <h1>Rising Waters</h1>
+  <p class="subtitle">AI Powered Flood Prediction System</p>
+  <p class="desc">
+    A trained machine learning model reads temperature, humidity, cloud cover and
+    seasonal rainfall patterns to estimate flood risk for a region — in seconds,
+    before the water does.
+  </p>
+
+  <div class="hero-actions">
+    <a href="/predict" class="btn btn-primary">
+      <span class="btn-label">Predict Flood</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+    <a href="#how-it-works" class="btn btn-ghost">How it works</a>
+  </div>
+
+  <a href="#features" class="scroll-cue" aria-label="Scroll for more">
+    Scroll
+    <span class="stick"></span>
+  </a>
+</header>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">Capabilities</span>
+    <h2>Built for early, reliable warnings</h2>
+    <p>Every prediction draws on ten weather and rainfall signals, processed by a model trained on historical flood data.</p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+      </div>
+      <h3>Machine Learning</h3>
+      <p>A trained classification model evaluates risk from real historical rainfall and weather records.</p>
+    </div>
+
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6-1.5A4 4 0 0 0 6.5 16"></path></svg>
+      </div>
+      <h3>Weather Analysis</h3>
+      <p>Temperature, humidity and cloud cover are combined with seasonal rainfall to read the bigger picture.</p>
+    </div>
+
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"></path></svg>
+      </div>
+      <h3>Fast Prediction</h3>
+      <p>Submit a reading and get a clear flood / no-flood result with confidence in moments.</p>
+    </div>
+
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M3 12h18M3 7h18"></path><path d="M6 17v3M18 17v3" stroke-opacity="0"></path><circle cx="6" cy="7" r="1.4" fill="currentColor" stroke="none"></circle><circle cx="13" cy="12" r="1.4" fill="currentColor" stroke="none"></circle><circle cx="19" cy="17" r="1.4" fill="currentColor" stroke="none"></circle></svg>
+      </div>
+      <h3>Flood Monitoring</h3>
+      <p>Track rainfall across divisions and seasons to understand where risk is building.</p>
+    </div>
+
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4M16 3v4"></path></svg>
+      </div>
+      <h3>Seasonal Insight</h3>
+      <p>Jan–Feb, Mar–May, Jun–Sep and Oct–Dec rainfall are read separately for sharper context.</p>
+    </div>
+
+    <div class="feature-card glass reveal">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 9h20"></path><path d="M7 14h2M7 17h6"></path></svg>
+      </div>
+      <h3>Responsive Design</h3>
+      <p>A dashboard that works the same way on a desktop, a tablet, or a phone in the field.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works" style="padding-top:0;">
+  <div class="section-head reveal">
+    <span class="section-eyebrow">Process</span>
+    <h2>From reading to result</h2>
+    <p>Four steps connect your weather data to a clear, actionable answer.</p>
+  </div>
+  <div class="flow-strip glass reveal" style="border-radius: var(--radius-lg); max-width:980px; margin:0 auto;">
+    <div class="flow-step">Enter weather &amp; rainfall data</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Flask backend receives form</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">ML model predicts risk</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-step">Result &amp; confidence shown</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-brand">Rising Waters</div>
+
+    <p>
+        AI-Powered Flood Prediction System using Machine Learning
+    </p>
+
+    <div class="footer-team">
+    <p id="footer-team-head">Developed by</p><br> 
+    <p><strong>Al Rihab Chandhini Mohammed</strong></p>
+    <p><strong>Satyanarayana Akula</strong></p>
+    <p><strong>Prem Satya Sai Udatha</strong></p>
+    <p><strong>Ranadeep Vinukonda</strong></p>
+    <p><strong>Vijay Kiran Kommoju</strong></p>
+    </div>
+    
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
